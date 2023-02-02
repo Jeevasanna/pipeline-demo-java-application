@@ -1,7 +1,7 @@
 
 pipeline {
     agent any
-//     tools {
+//     tools {              //Configure this Pipeline to use the Maven version matching maven 3.8.7 & configured same in "Global tool configuration"
 //     maven 'Maven 3.8.7'
 //     }
     stages {
@@ -27,7 +27,7 @@ pipeline {
                 }
            }
        }
-       stage('Quality Gate Analysis'){
+       stage('Quality Gate Analysis'){    //its for quality policy in our org & tells whether my project is ready for release
             steps{
                     waitForQualityGate abortPipeline: true 
            }
