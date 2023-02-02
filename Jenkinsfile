@@ -26,6 +26,25 @@ pipeline {
                         
                 }
            }
-       } 
+       }
+       stage('Upload war to Nexus'){
+            steps{
+                nexusArtifactUploader artifacts: [
+                    [
+                        artifactId: 'java-web-app', 
+                        classifier: '', 
+                        file: 'target/java-web-app-1.0.0.war', 
+                        type: 'war'
+                    
+                    ]
+                ], 
+                credentialsId: 'nexus3', 
+                groupId: 'com.mt', 
+                nexusUrl: '43.204.98.82:80:8081', 
+                nexusVersion: 'nexus2', 
+                protocol: 'http', 
+                repository: 'http://43.204.98.82:8081/repository/pipeline-demo-java-application-release/', 
+                version: '1.0.0'
+        } 
     }
 }  
