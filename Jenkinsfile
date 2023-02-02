@@ -15,7 +15,7 @@ pipeline {
                  sh 'mvn clean package'
            }
        }
-       stage('sonar Analysis') {
+       stage('sonar Analysis') {    //Code Quality Assurance tool that collects and analyzes source code, and provides reports for the code quality of your project
             steps{
                 withSonarQubeEnv('sonarqube') {
                    sh 'mvn clean verify sonar:sonar \
