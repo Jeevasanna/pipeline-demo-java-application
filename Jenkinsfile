@@ -7,5 +7,10 @@ pipeline {
                git branch: 'main', url: 'https://github.com/Jeevasanna/pipeline-demo-java-application.git'
            }
        }
+       stage('Build artifact') {
+            steps {
+                 sh 'mvn package'
+           }
+       } 
     }
 }  
