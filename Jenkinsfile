@@ -45,6 +45,7 @@ pipeline {
                 protocol: 'http', 
                 repository: 'http://43.204.98.82:8081/repository/pipeline-demo-java-application-release/', 
                 version: '1.0.0'
+            }    
         } 
     }
 }  
