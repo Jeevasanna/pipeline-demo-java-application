@@ -40,7 +40,7 @@ pipeline {
                 ], 
                 credentialsId: 'nexus3', 
                 groupId: 'com.mt', 
-                nexusUrl: '43.204.98.82:80:8081', 
+                nexusUrl: '43.204.98.82:8081', 
                 nexusVersion: 'nexus3', 
                 protocol: 'http', 
                 repository: 'pipeline-demo-java-application-release', 
