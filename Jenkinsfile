@@ -43,7 +43,7 @@ pipeline {
                 nexusUrl: '43.204.98.82:80:8081', 
                 nexusVersion: 'nexus2', 
                 protocol: 'http', 
-                repository: 'http://43.204.98.82:8081/repository/pipeline-demo-java-application-release/', 
+                repository: 'pipeline-demo-java-application-release', 
                 version: '1.0.0'
             }    
         } 
