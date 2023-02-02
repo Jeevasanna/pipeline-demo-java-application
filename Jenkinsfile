@@ -46,6 +46,11 @@ pipeline {
                 repository: 'pipeline-demo-java-application-release', 
                 version: '1.0.0'
             }    
-        } 
+        }
+        stage('Quality Gate Analysis'){
+            steps{
+                    waitForQualityGate abortPipeline: true 
+            }
+        }
     }
 }  
