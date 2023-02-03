@@ -1,4 +1,4 @@
-- hosts: tomcat
+- hosts: apache
   become: true
   tasks:
     - name: Deploy in tomcat
