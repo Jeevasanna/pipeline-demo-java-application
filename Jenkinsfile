@@ -10,7 +10,7 @@ pipeline {
                git branch: 'main', url: 'https://github.com/Jeevasanna/pipeline-demo-java-application.git'
            }
        }
-       stage('owasp-dependency-check') {            
+       stage('owasp-dependency-check') {
             steps {                          
                  dependencyCheck additionalArguments: '--scan /var/lib/jenkins/workspace/${JOB_NAME} --format ALL --disableYarnAudit', 
                  odcInstallation: 'owasp-dependency-check' 
