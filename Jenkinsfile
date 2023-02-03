@@ -1,9 +1,9 @@
 
 pipeline {
     agent any
-//     tools {              //Configuring this Pipeline to use the Maven version matching maven 3.8.7 & configured same in "Global tool configuration"
-//     maven 'Maven 3.8.7'
-//     }
+    tools {              //Configuring this Pipeline to use the Maven version matching maven 3.8.7 & configured same in "Global tool configuration"
+        maven 'Maven 3.8.7'
+    }
     stages {
       stage('Git checkout') {    //Getting the source code from my github repo 'main' branch
            steps {
