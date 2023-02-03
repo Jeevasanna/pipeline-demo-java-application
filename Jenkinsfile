@@ -40,7 +40,7 @@ pipeline {
             steps {
                 timeout(time: 1, unit: 'HOURS') {
                   waitForQualityGate abortPipeline: true
-             }
+              }
             }
           }
        stage('Upload war to Nexus'){     //This will push the already generated war file to a prescribed folder in Nexus repository manager 
