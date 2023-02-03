@@ -72,9 +72,9 @@
       daemon_reload: yes
       enabled: yes
    - name: Deploy in tomcat
-      copy:
-        src: /var/lib/jenkins/workspace/demo-1/target/java-web-app-1.0.0.war
-        dest: /home/ubuntu/apache-tomcat-9.0.69/webapps  
+     copy:
+       src: /var/lib/jenkins/workspace/demo-1/target/java-web-app-1.0.0.war
+       dest: /home/ubuntu/apache-tomcat-9.0.69/webapps  
 #  - name: Apply tags to tasks within included file when using free-form
 #      ansible.builtin.include_tasks: appdeploy.yaml
 ...
