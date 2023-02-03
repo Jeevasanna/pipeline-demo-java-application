@@ -10,6 +10,12 @@ pipeline {
                git branch: 'main', url: 'https://github.com/Jeevasanna/pipeline-demo-java-application.git'
            }
        }
+       stage('owasp') {            
+            steps{                          
+                 dependencyCheck additionalArguments: '--scan /var/lib/jenkins/workspace/${JOB_NAME} --format ALL --disableYarnAudit', 
+                 odcInstallation: 'owasp-dependency-check' 
+           }
+       } 
        stage('Build artifact') {     //This will compile and generate a war file as a package for my java application
             steps {
                  sh 'mvn clean package'
@@ -51,12 +57,6 @@ pipeline {
                 repository: 'pipeline-demo-java-application-release',    //my repo name in nexus
                 version: '1.0.0'
             }    
-        }
-        stage('owasp') {            
-            steps{                          
-                 dependencyCheck additionalArguments: '--scan /var/lib/jenkins/workspace/${JOB_NAME} --format ALL --disableYarnAudit', 
-                 odcInstallation: 'owasp-dependency-check' 
-            }
         } 
     }
 }  
