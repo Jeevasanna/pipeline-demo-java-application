@@ -52,5 +52,12 @@ pipeline {
                 version: '1.0.0'
             }    
         }
+        stage('OWASP-Dependency-Check'){            
+            steps{   
+                                      
+                 dependencyCheck additionalArguments: '--scan /var/lib/jenkins/workspace/${JOB_NAME} --format ALL --disableYarnAudit', 
+                odcInstallation: 'owasp-dependency-check' 
+            }
+        } 
     }
 }  
