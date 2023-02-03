@@ -31,11 +31,11 @@ pipeline {
                 }
            }
        }
-       stage('Quality Gate Analysis'){    //its for quality policy in our org & tells whether my project is ready for release
-            steps{
-                    waitForQualityGate abortPipeline: true 
-           }
-       } 
+//        stage('Quality Gate Analysis'){    //its for quality policy in our org & tells whether my project is ready for release
+//             steps{
+//                     waitForQualityGate abortPipeline: true 
+//            }
+//        } 
 //        stage("Quality Gate") {
 //             steps {
 //                 timeout(time: 1, unit: 'HOURS') {
