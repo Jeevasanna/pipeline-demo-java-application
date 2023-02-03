@@ -31,18 +31,18 @@ pipeline {
                 }
            }
        }
-//        stage('Quality Gate Analysis'){    //its for quality policy in our org & tells whether my project is ready for release
-//             steps{
-//                     waitForQualityGate abortPipeline: true 
-//            }
-//        } 
-       stage("Quality Gate") {
-            steps {
-                timeout(time: 1, unit: 'HOURS') {
-                  waitForQualityGate abortPipeline: true
-                }
+       stage('Quality Gate Analysis'){    //its for quality policy in our org & tells whether my project is ready for release
+            steps{
+                    waitForQualityGate abortPipeline: true 
            }
-       }
+       } 
+//        stage("Quality Gate") {
+//             steps {
+//                 timeout(time: 1, unit: 'HOURS') {
+//                   waitForQualityGate abortPipeline: true
+//                 }
+//            }
+//        }
        stage('Upload war to Nexus'){     //This will push the already generated war file to a prescribed folder in Nexus repository manager 
             steps{
                 nexusArtifactUploader artifacts: [    //using this plugin, am uploading my artifact to nexus , got this info from snippet generator
