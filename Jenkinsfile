@@ -25,8 +25,8 @@ pipeline {
                    sh 'mvn clean verify sonar:sonar \
                     -Dsonar.projectName=pipeline-demo-java-application-1 \
                     -Dsonar.projectKey=java-project \
-                    -Dsonar.login=sqp_ae38c1de29a4b28e36740ab64dbb8964dd533506 \
-                    -Dsonar.host.url=http://13.233.136.77:9000'
+                    -Dsonar.login=squ_6cee02bd03f5655e79fde1ecbcc76b18e95e2262 \
+                    -Dsonar.host.url=http://43.204.38.67/:9000'
                         
                 }
            }
@@ -56,7 +56,7 @@ pipeline {
                 ], 
                 credentialsId: 'nexus3',     //nexus id , where my username & pwd defined
                 groupId: 'com.mt',                 // got from pom.xml
-                nexusUrl: '43.204.98.82:8081',     //my nexusurl with public-ip, bcoz my nexus and jenkins are not in same network
+                nexusUrl: '43.204.22.243/:8081',     //my nexusurl with public-ip, bcoz my nexus and jenkins are not in same network
                 nexusVersion: 'nexus3', 
                 protocol: 'http', 
                 repository: 'pipeline-demo-java-application-release',    //my repo name in nexus
