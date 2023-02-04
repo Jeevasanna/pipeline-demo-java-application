@@ -74,7 +74,7 @@
    - name: Deploy in tomcat
      copy:
        src: /var/lib/jenkins/workspace/Pipeline-Job/target/java-web-app-1.0.0.war
-       dest: /home/ubuntu/tomcat/webapps  
+       dest: /home/ansible/tomcat/webapps  
 #    - name: Apply tags to tasks within included file when using free-form
 #      ansible.builtin.include_tasks: appdeploy.yaml
 ...
