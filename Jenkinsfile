@@ -69,7 +69,7 @@ pipeline {
            stage('push nexus artifact'){
                steps {
                    sh 'mvn clean deploy'
-               }
+               }
            }
 //         stage('deploy to ansible') {
 //             steps {
