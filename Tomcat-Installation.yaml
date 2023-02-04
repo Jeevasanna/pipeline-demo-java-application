@@ -75,6 +75,6 @@
 #      copy:
 #        src: /var/lib/jenkins/workspace/demo-1/target/java-web-app-1.0.0.war
 #        dest: /home/ubuntu/tomcat/webapps  
- - name: Apply tags to tasks within included file when using free-form
+   - name: Apply tags to tasks within included file when using free-form
      ansible.builtin.include_tasks: appdeploy.yaml
 ...
