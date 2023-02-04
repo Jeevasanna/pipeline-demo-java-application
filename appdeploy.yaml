@@ -4,4 +4,4 @@
     - name: Deploy in tomcat
       copy:
         src: /var/lib/jenkins/workspace/demo_app_new/target/java-web-app-1.0.0.war
-        dest: /home/ubuntu/apache-tomcat-9.0.69/webapps
+        dest: /home/ubuntu/tomcat/webapps
