@@ -2,7 +2,7 @@
 pipeline {
     agent any
     tools {
-      maven 'maven'
+      maven 'MAVEN'
     }
     stages {
       stage('Git checkout') {    //Getting the source code from my github repo 'main' branch
