@@ -1,2 +1,2 @@
 [apache]
-172.31.7.180 ansible_user=ubuntu
+172.31.7.180 ansible_user=ubuntu  
