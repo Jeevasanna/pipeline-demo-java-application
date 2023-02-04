@@ -66,6 +66,11 @@ pipeline {
 //                 version: '1.0.0'
 //             }    
 //         }
+           stage('push nexus artifact'){
+               steps {
+                sh 'mvn clean deploy'
+               }
+           }
 //         stage('deploy to ansible') {
 //             steps {
 //               ansiblePlaybook credentialsId: 'ansible-deployment', disableHostKeyChecking: true, installation: 'ansible', inventory: 'hosts.inv', playbook: 'Tomcat-Installation.yaml'
