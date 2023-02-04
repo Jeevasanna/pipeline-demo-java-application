@@ -2,7 +2,7 @@
 - hosts: apache
   become: true
   tasks:
-    - name: Deploy in tomcat
-      copy:
-        src: /var/lib/jenkins/workspace/Pipeline-Job/target/java-web-app-1.0.0.war
-        dest: /home/ubuntu/tomcat/webapps
+   - name: Deploy unto tomcat
+     copy:
+       src: /var/lib/jenkins/workspace/Pipeline-Job/target/java-web-app-1.0.0.war
+       dest: /home/ubuntu/tomcat/webapps
