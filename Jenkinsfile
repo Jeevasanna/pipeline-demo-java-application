@@ -70,6 +70,6 @@ pipeline {
 //             steps {
 //               ansiblePlaybook credentialsId: 'ansible-deployment', disableHostKeyChecking: true, installation: 'ansible', inventory: 'hosts.inv', playbook: 'Tomcat-Installation.yaml'
 //             }      
-        }
+//         }
     }
 }  
