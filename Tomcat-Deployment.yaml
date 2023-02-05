@@ -6,7 +6,7 @@
   tasks:
     - name: Pulling latest tomcat image
       docker_image:
-        name: tomcat:latest
+        name: tomcat
         source: pull
         state: present
     - name: Run docker container using tomcat image
