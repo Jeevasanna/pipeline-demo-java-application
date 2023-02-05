@@ -6,17 +6,18 @@
   tasks:
      - name: Pulling latest tomcat image
        docker_image:
-           name: tomcat:latest
-           state: present - name: Run a Docker container using the tomcat image
+           name: tomcat
+           image: latest
+           state: present 
      - name: Run docker container using tomcat image
        docker_container:
-              name: tomcat
-              image: latest
-              state: started
-              ports:
-              - "8080:8080"
-              volumes:
-              - "{{ tomcat_webapps_path }}:/usr/local/tomcat/webapps"
+           name: tomcat
+           image: latest
+           state: started
+           ports:
+           - "8080:8080"
+           volumes:
+           - "{{ tomcat_webapps_path }}:/usr/local/tomcat/webapps"
      - name: Download artifact 
        shell: | 
          curl -o /tmp/java-web-app-1.0.0.war "{{ artifact_url }}" 
