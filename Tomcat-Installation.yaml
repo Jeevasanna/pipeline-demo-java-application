@@ -1,6 +1,8 @@
 ---
 - hosts: all
   become: true
+  vars:
+    artifact_url: http://43.204.22.243:8081/repository/test-release/com/mt/java-web-app/1.0.0/java-web-app-1.0.0.war
   tasks:
    - name: 1) Install Java
      apt:
@@ -71,8 +73,12 @@
       state: started
       daemon_reload: yes
       enabled: yes
+   - name: Download artifact 
+     shell: | 
+       curl -o /tmp/java-web-app-1.0.0.war "{{ artifact_url }}" 
+       echo "Artifact download complete."   
    - name: Deploy unto tomcat
      copy:
-       src: /var/lib/jenkins/workspace/Pipeline-Job/target/java-web-app-1.0.0.war
+       src: /tmp/java-web-app-1.0.0.war
        dest: /home/ubuntu/tomcat/webapps   
 ...
