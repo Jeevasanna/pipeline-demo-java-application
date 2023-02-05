@@ -2,7 +2,7 @@
   vars:
     artifact_url: >-
       http://43.204.22.243:8081/repository/test-release/com/mt/java-web-app/1.0.0/java-web-app-1.0.0.war
-    tomcat_webapps_path: /home/ubuntu/tomcat
+    tomcat_webapps_path: /tmp/tomcat
   tasks:
     - name: Pulling latest tomcat image
       docker_image:
