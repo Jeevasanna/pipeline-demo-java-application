@@ -2,7 +2,7 @@
   vars:
     artifact_url: >-
       http://43.204.22.243:8081/repository/test-release/com/mt/java-web-app/1.0.0/java-web-app-1.0.0.war
-    tomcat_webapps_path: /tmp/tomcat
+    tomcat_webapps_path: /tmp/tomcat/webapps
   tasks:
     - name: Pulling latest tomcat image
       docker_image:
@@ -18,7 +18,7 @@
         ports:
           - '8888:8080'
         volumes:
-          - '{{ tomcat_webapps_path }}:/usr/local/tomcat/webapps'
+          - '{{ tomcat_webapps_path }}:/usr/local/tomcat'
     - name: Download artifact
       shell: |
         curl -o /tmp/java-web-app-1.0.0.war "{{ artifact_url }}" 
