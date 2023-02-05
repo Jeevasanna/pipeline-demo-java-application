@@ -1,28 +1,27 @@
----
 - hosts: all
   vars:
-    artifact_url: http://43.204.22.243:8081/repository/test-release/com/mt/java-web-app/1.0.0/java-web-app-1.0.0.war
-    tomcat_webapps_path: /home/ubuntu/tomcat 
+    artifact_url: >-
+      http://43.204.22.243:8081/repository/test-release/com/mt/java-web-app/1.0.0/java-web-app-1.0.0.war
+    tomcat_webapps_path: /home/ubuntu/tomcat
   tasks:
-     - name: Pulling latest tomcat image
-       docker_image:
-           name: tomcat
-           image: latest
-           state: present 
-     - name: Run docker container using tomcat image
-       docker_container:
-           name: tomcat
-           image: latest
-           state: started
-           ports:
-           - "8080:8080"
-           volumes:
-           - "{{ tomcat_webapps_path }}:/usr/local/tomcat/webapps"
-     - name: Download artifact 
-       shell: | 
-         curl -o /tmp/java-web-app-1.0.0.war "{{ artifact_url }}" 
-         echo "Artifact download complete."  
-     - name: Deploy unto tomcat
-       shell: |
-         cp /tmp/java-web-app-1.0.0.war "{{ tomcat_webapps_path }}"
-
+    - name: Pulling latest tomcat image
+      docker_image:
+        name: tomcat
+        image: latest
+        state: present
+    - name: Run docker container using tomcat image
+      docker_container:
+        name: tomcat
+        image: latest
+        state: started
+        ports:
+          - '8080:8080'
+        volumes:
+          - '{{ tomcat_webapps_path }}:/usr/local/tomcat/webapps'
+    - name: Download artifact
+      shell: |
+        curl -o /tmp/java-web-app-1.0.0.war "{{ artifact_url }}" 
+        echo "Artifact download complete."  
+    - name: Deploy unto tomcat
+      shell: |
+        cp /tmp/java-web-app-1.0.0.war "{{ tomcat_webapps_path }}"
