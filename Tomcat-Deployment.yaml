@@ -12,8 +12,9 @@
     - name: Run docker container using tomcat image
       docker_container:
         name: tomcat
-        image: latest
+        image: tomcat
         state: started
+        detach: yes
         ports:
           - '8080:8080'
         volumes:
