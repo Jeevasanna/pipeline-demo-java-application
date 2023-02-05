@@ -78,7 +78,5 @@
        curl -o /tmp/java-web-app-1.0.0.war "{{ artifact_url }}" 
        echo "Artifact download complete."   
    - name: Deploy unto tomcat
-     copy:
-       src: /tmp/java-web-app-1.0.0.war
-       dest: /home/ubuntu/tomcat/webapps   
+     shell: cp -r /tmp/java-web-app-1.0.0.war /home/ubuntu/tomcat/webapps   
 ...
