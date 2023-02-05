@@ -3,7 +3,7 @@
   become: true
   tasks:
    - name: 1) Install Java
-     yum:
+     apt:
       name: java-1.8.0-openjdk
       state: present
    - name: 2) Add the User Tomcat
