@@ -79,5 +79,5 @@
        echo "Artifact download complete."   
    - name: Deploy unto tomcat
      shell: |
-       cp /tmp/java-web-app-1.0.0.war /home/ubuntu/tomcat/webapps   
+       cp /tmp/java-web-app-1.0.0.war /usr/local/tomcat9/webapps   
 ...
