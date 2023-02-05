@@ -4,7 +4,7 @@
   tasks:
    - name: 1) Install Java
      apt:
-      name: java-1.8.0-openjdk
+      name: openjdk-11-jdk
       state: present
    - name: 2) Add the User Tomcat
      user:
