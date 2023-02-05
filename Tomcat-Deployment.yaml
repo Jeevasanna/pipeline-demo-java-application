@@ -18,11 +18,11 @@
         ports:
           - '8888:8080'
         volumes:
-          - '{{ tomcat_webapps_path }}:/usr/local/tomcat'
+          - '{{ tomcat_webapps_path }}:/usr/local/tomcat/webapps'
     - name: Download artifact
       shell: |
         curl -o /tmp/java-web-app-1.0.0.war "{{ artifact_url }}" 
         echo "Artifact download complete."  
     - name: Deploy unto tomcat
       shell: |
-        cp /tmp/java-web-app-1.0.0.war "{{ tomcat_webapps_path }}"/webapps
+        cp /tmp/java-web-app-1.0.0.war "{{ tomcat_webapps_path }}"
