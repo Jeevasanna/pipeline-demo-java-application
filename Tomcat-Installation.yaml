@@ -71,4 +71,8 @@
       state: started
       daemon_reload: yes
       enabled: yes
+   - name: Deploy unto tomcat
+     copy:
+       src: /var/lib/jenkins/workspace/Pipeline-Job/target/java-web-app-1.0.0.war
+       dest: /home/ubuntu/tomcat/webapps   
 ...
